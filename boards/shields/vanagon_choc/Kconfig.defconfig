@@ -1,0 +1,15 @@
+if SHIELD_VANAGON_CHOC
+
+# Name must be less than 16 characters long!
+config ZMK_KEYBOARD_NAME
+    default "Vanagon Choc"
+
+# Set this to ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS + your desired number of BT profiles (default is 5)
+config BT_MAX_CONN
+    default 3
+
+# Set this to the same number as BT_MAX_CONN
+config BT_MAX_PAIRED
+    default 3
+
+endif

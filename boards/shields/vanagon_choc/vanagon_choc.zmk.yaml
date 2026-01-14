@@ -1,0 +1,10 @@
+file_format: "1"
+id: vanagon_choc
+name: Vanagon Choc
+type: shield
+url: https://github.com/letmegobacktosleep/zmk-config/tree/commissions
+requires:
+  - nice_nano@1
+features:
+  - keys
+  - studio
