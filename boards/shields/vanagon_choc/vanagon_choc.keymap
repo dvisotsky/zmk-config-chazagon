@@ -74,7 +74,7 @@
             bindings = <
                 &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7
                 &kp ESC     &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O
-                &bt BT_SEL_0  &bt BT_SEL_1    &bt BT_SEL_2    &trans          &trans          &kp C_PREV  &kp C_VOL_DN    &kp C_VOL_UP      &kp C_NEXT      &kp C_PP
+                &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2    &trans          &trans          &kp C_PREV  &kp C_VOL_DN    &kp C_VOL_UP      &kp C_NEXT      &kp C_PP
                 &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp  COMMA
                 &kp LCTRL   &kp LGUI    &kp LALT    &mo 4   &kp SPACE   &kp RALT    &kp RGUI    &tog 3
             >;
