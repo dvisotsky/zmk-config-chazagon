@@ -4,29 +4,81 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            bindings = <&kp TAB>;
+            layers = <0>
+        };
+        combo_bs {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            bindings = <&kp BSPC>;
+            layers = <0>
+        };
+    };
+};
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer { // Layer 0
             display-name = "Base";
             bindings = <
-                &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &lt 1 N6 /* tap = N6, hold = layer 1 */
-                &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P
-                &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp ENTER
-                &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp DOT     &kp RSHFT
-                &kp LCTRL   &kp LGUI    &kp LALT    &kp SPACE   &kp SPACE   &kp RALT    &kp RGUI    &kp RCTRL
+                &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6 // 6
+                &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O       &kp P // 16
+                &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L       &kp ENTER //26
+                &kp LS(Z)   &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp  COMMA  &kp RS(DOT)
+                &kp LCTRL   &kp LALT    &kp LGUI    &mo 1      &kp SPACE    &kp RC(ESC) &kp RALT    &kp RCTRL
             >;
         };
 
-        second_layer { // Layer 1
-            display-name = "Layer 1";
+        num_sym_layer {
+            display-name = "NumSym";
             bindings = <
+                &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6
+                &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      &kp N6      &kp N7      &kp N8      &kp N9       &kp N0
+                &mo 2       &kp HOME    &kp MINUS   &kp EQUAL   &kp END     &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT    &mo 2
+                &kp GRAVE   &kp LBRC    &kp LBKT    &kp SQT     &kp SEMI    &kp SLASH   &kp RBKT    &kp  RBRC   &kp BSLH
+                &kp LCTRL   &kp LGUI    &kp LALT    &kp SPACE   &kp RSHFT   &kp RALT    &kp RGUI    &kp RCTRL
+            >;
+        }
+
+        function_layer {
+            display-name = "Function";
+            bindings = <
+                &kp F7      &kp F8      &kp F9      &kp F10      &kp F11      &kp F12
                 &out OUT_TOG    &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &studio_unlock  &trans
                 &trans          &trans          &trans          &trans          &trans          &trans      &trans      &trans      &trans      &trans
-                &trans          &trans          &trans          &trans          &trans          &trans      &trans      &trans      &trans      &trans
-                &trans          &trans          &trans          &trans          &trans          &trans      &trans      &trans      &trans
-                &trans          &trans          &trans          &trans          &trans          &trans      &trans      &trans
+                &bt BT_SEL_0    &bt BT_SEL_1    &bt BT_SEL_2    &trans          &trans          &kp C_PREV  &kp C_VOL_DN    &kp C_VOL_UP      &kp C_NEXT      &kp C_PP
+                &bt BT_CLR      &out OUT_USB    &out OUT_BLE    &trans          &trans          &trans      &trans      &trans      &tog 3
+                &trans          &trans          &trans          &trans          &trans          &bt BT_SEL_0      &bt BT_SEL_1      &tog 3
             >;
         };
+
+        game_layer {
+            display-name = "Game";
+            bindings = <
+                &kp F1        &kp N1      &kp N2      &kp N3    &kp N4      &kp N5
+                &kp ESC     &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O      
+                &kp TAB     &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L      
+                &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp  COMMA  
+                &kp LCTRL   &kp LGUI    &kp LALT    &sl 4       &kp SPACE   &kp ENTER   &kp RGUI    &tog 3
+            >;
+        }
+
+        game_func_layer {
+            display-name = "G Func";
+            bindings = <
+                &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &kp F7
+                &kp ESC     &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O
+                &bt BT_SEL_0  &bt BT_SEL_1    &bt BT_SEL_2    &trans          &trans          &kp C_PREV  &kp C_VOL_DN    &kp C_VOL_UP      &kp C_NEXT      &kp C_PP
+                &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp  COMMA
+                &kp LCTRL   &kp LGUI    &kp LALT    &mo 4   &kp SPACE   &kp RALT    &kp RGUI    &tog 3
+            >;
+        }
     };
 };
