@@ -45,7 +45,7 @@
                 &kp GRAVE   &kp LBRC    &kp LBKT    &kp SQT     &kp SEMI    &kp SLASH   &kp RBKT    &kp  RBRC   &kp BSLH
                 &kp LCTRL   &kp LGUI    &kp LALT    &kp SPACE   &kp RSHFT   &kp RALT    &kp RGUI    &kp RCTRL
             >;
-        }
+        };
 
         function_layer {
             display-name = "Function";
@@ -68,7 +68,7 @@
                 &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp  COMMA  
                 &kp LCTRL   &kp LGUI    &kp LALT    &sl 4       &kp SPACE   &kp ENTER   &kp RGUI    &tog 3
             >;
-        }
+        };
 
         game_func_layer {
             display-name = "G Func";
@@ -79,6 +79,6 @@
                 &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp  COMMA
                 &kp LCTRL   &kp LGUI    &kp LALT    &mo 4   &kp SPACE   &kp RALT    &kp RGUI    &tog 3
             >;
-        }
+        };
     };
 };
