@@ -10,13 +10,13 @@
             timeout-ms = <50>;
             key-positions = <20 21>;
             bindings = <&kp TAB>;
-            layers = <0>
+            layers = <0>;
         };
         combo_bs {
             timeout-ms = <50>;
             key-positions = <22 23>;
             bindings = <&kp BSPC>;
-            layers = <0>
+            layers = <0>;
         };
     };
 };
